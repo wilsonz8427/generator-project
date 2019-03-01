@@ -6,7 +6,7 @@
   <title>Jquery template</title>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <style>
-    #sCircle {
+    #dough {
       height: 110px;
       width: 110px;
       background-color: #bbb;
@@ -17,29 +17,15 @@
       top: 100px;
     }
 
-    #mCircle {
-      height: 170px;
-      width: 170px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: none;
-      position: absolute;
-      left: 300px;
-      top: 100px;
-    }
-
-    #lCircle {
-      height: 230px;
-      width: 230px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: none;
-      position: absolute;
-      left: 300px;
-      top: 100px;
-    }
-
     #tomatoS {
+      background-color: #b21807;
+      border-radius: 50%;
+      display: none;
+      position: absolute;
+      left: 307px;
+      top: 107px;
+    }
+    #whiteS {
       height: 0px;
       width: 0px;
       background-color: #b21807;
@@ -48,6 +34,13 @@
       position: absolute;
       left: 307px;
       top: 107px;
+    }
+    
+    #cheese {
+      background-color: #fed37b;
+      position: absolute;
+      left: 310px;
+      top: 110px;
     }
   </style>
   <script>
@@ -58,21 +51,28 @@
         var topping = $(".sTopping").val();
 
         if (sizes == "small") {
-          $("#sCircle").css("display", "block");
+          $("#dough").css({"display":"block", "height":"110px", "width": "110px"});
           
           if (sauces == "tomato") {
             $("#tomatoS").css({"display":"block", "height":"95px", "width":"95px"});
           }
+          else {
+            $('#whiteS').css()
+          }
         }
         else if (sizes == 'medium') {
-          $("#mCircle").css("display", "block");
+          $("#dough").css({"display":"block", "height":"170px", "width": "170px"});
           
           if (sauces == "tomato") {
-            $("#tomatoS").css({"display":"block", "height":"155px", "width":"155px",});
+            $("#tomatoS").css({"display":"block", "height":"155px", "width":"155px"});
           }
         }
         else {
-          $("#lCircle").css("display", "block");
+          $("#dough").css({"display":"block", "height":"230px", "width": "230px"});
+          
+          if (sauces == "tomato") {
+            $("#tomatoS").css({"display":"block", "height":"215px", "width":"215px"});
+          }
         }
       });
     });
@@ -102,17 +102,18 @@
   <div class="topping">
     Topping:
     <select class=sToppling>
+      <option value="none">None</option>
       <option value="pep">Pep</option>
     </select>
   </div>
   <button>CREATE!</button>
 
-  <span id="sCircle"></span>
-  <span id="mCircle"></span>
-  <span id="lCircle"></span>
+  <span id="dough"></span>
 
   <span id="tomatoS"></span>
   <span id="whiteS"></span>
+  
+  <span id="chesse"></span>
 </body>
 
 </html>
