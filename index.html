@@ -7,27 +7,72 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <style>
     #sCircle {
-      height: 50px;
-      width: 50px;
+      height: 110px;
+      width: 110px;
       background-color: #bbb;
       border-radius: 50%;
-      display: hidden;
+      display: none;
       position: absolute;
       left: 300px;
       top: 100px;
+    }
+
+    #mCircle {
+      height: 170px;
+      width: 170px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: none;
+      position: absolute;
+      left: 300px;
+      top: 100px;
+    }
+
+    #lCircle {
+      height: 230px;
+      width: 230px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: none;
+      position: absolute;
+      left: 300px;
+      top: 100px;
+    }
+
+    #tomatoS {
+      height: 0px;
+      width: 0px;
+      background-color: #b21807;
+      border-radius: 50%;
+      display: none;
+      position: absolute;
+      left: 307px;
+      top: 107px;
     }
   </style>
   <script>
     $(function() {
       $('button').click(function() {
         var sizes = $(".sSizes").val();
-        console.log(sizes);
         var sauces = $(".sSauces").val();
         var topping = $(".sTopping").val();
 
         if (sizes == "small") {
-          console.log("cool beans");
-          $("#sCircle").css("display", "inline-block");
+          $("#sCircle").css("display", "block");
+          
+          if (sauces == "tomato") {
+            $("#tomatoS").css({"display":"block", "height":"95px", "width":"95px"});
+          }
+        }
+        else if (sizes == 'medium') {
+          $("#mCircle").css("display", "block");
+          
+          if (sauces == "tomato") {
+            $("#tomatoS").css({"display":"block", "height":"155px", "width":"155px",});
+          }
+        }
+        else {
+          $("#lCircle").css("display", "block");
         }
       });
     });
@@ -54,7 +99,7 @@
     </select>
   </div>
 
-  <div class "topping">
+  <div class="topping">
     Topping:
     <select class=sToppling>
       <option value="pep">Pep</option>
@@ -63,6 +108,11 @@
   <button>CREATE!</button>
 
   <span id="sCircle"></span>
+  <span id="mCircle"></span>
+  <span id="lCircle"></span>
+
+  <span id="tomatoS"></span>
+  <span id="whiteS"></span>
 </body>
 
 </html>
