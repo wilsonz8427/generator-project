@@ -7,8 +7,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <style>
     #dough {
-      height: 110px;
-      width: 110px;
       background-color: #bbb;
       border-radius: 50%;
       display: none;
@@ -25,19 +23,29 @@
       left: 307px;
       top: 107px;
     }
+
     #whiteS {
-      height: 0px;
-      width: 0px;
-      background-color: #b21807;
+      background-color: #f2f1ea;
       border-radius: 50%;
       display: none;
       position: absolute;
       left: 307px;
       top: 107px;
     }
-    
+
     #cheese {
       background-color: #fed37b;
+      border-radius: 50%;
+      display: none;
+      position: absolute;
+      left: 310px;
+      top: 110px;
+    }
+
+    #pep {
+      background-color: #b21807;
+      border-radius: 50%;
+      display: block;
       position: absolute;
       left: 310px;
       top: 110px;
@@ -49,29 +57,48 @@
         var sizes = $(".sSizes").val();
         var sauces = $(".sSauces").val();
         var topping = $(".sTopping").val();
+        var pepE = $('<span id="pep"></span>')
+
+        function pepGen(amount) {
+          for (i = 0; i <= amount; i++) {
+            $('body').append(pepE);
+          }
+        }
+
 
         if (sizes == "small") {
-          $("#dough").css({"display":"block", "height":"110px", "width": "110px"});
-          
+          $("#dough").css({ "display": "block", "height": "110px", "width": "110px" });
+          $('#cheese').css({ "display": "block", "height": "90px", "width": "90px" });
+
+          pepGen(3);
+          $('#pep').css({"display":"block", "width":"100px", "height":"100px"});
           if (sauces == "tomato") {
-            $("#tomatoS").css({"display":"block", "height":"95px", "width":"95px"});
+            $("#tomatoS").css({ "display": "block", "height": "95px", "width": "95px" });
           }
           else {
-            $('#whiteS').css()
+            $('#whiteS').css({ "display": "block", "height": "95px", "width": "95px" })
           }
         }
         else if (sizes == 'medium') {
-          $("#dough").css({"display":"block", "height":"170px", "width": "170px"});
-          
+          $("#dough").css({ "display": "block", "height": "170px", "width": "170px" });
+          $('#chesse').css({ "display": "block", "height": "150px", "width": "150px" });
+
           if (sauces == "tomato") {
-            $("#tomatoS").css({"display":"block", "height":"155px", "width":"155px"});
+            $("#tomatoS").css({ "display": "block", "height": "155px", "width": "155px" });
+          }
+          else {
+            $('#whiteS').css({ "display": "block", "height": "155px", "width": "155px" })
           }
         }
         else {
-          $("#dough").css({"display":"block", "height":"230px", "width": "230px"});
-          
+          $("#dough").css({ "display": "block", "height": "230px", "width": "230px" });
+          $('#chesse').css({ "display": "block", "height": "210px", "width": "210px" });
+
           if (sauces == "tomato") {
-            $("#tomatoS").css({"display":"block", "height":"215px", "width":"215px"});
+            $("#tomatoS").css({ "display": "block", "height": "215px", "width": "215px" });
+          }
+          else {
+            $('#whiteS').css({ "display": "block", "height": "215px", "width": "215px" })
           }
         }
       });
@@ -80,7 +107,7 @@
 </head>
 
 <body>
-  <h1 style="text-align:center">Making a Pizza</h1>
+  <h1 style="text-align:center">Make a Pizza</h1>
 
   <div class="sizes">
     Sizes:
@@ -112,8 +139,10 @@
 
   <span id="tomatoS"></span>
   <span id="whiteS"></span>
-  
-  <span id="chesse"></span>
+
+  <span id="cheese"></span>
+
+  <span id="pep"></span>
 </body>
 
 </html>
