@@ -48,6 +48,8 @@
         var sizes = $(".sSizes").val();
         var sauces = $(".sSauces").val();
         var topping = $(".sTopping").val();
+        var lefRanNum;
+        var topRanNum;
 
         function pepGen(amount) {
           for (i = 1; i <= amount; i++) {
@@ -62,17 +64,19 @@
 
           if (sauces == "tomato") {
             $("#tomatoS").css({ "display": "block", "height": "100px", "width": "100px" });
+            $('#whiteS').css("display", "none");
           }
           else {
             $('#whiteS').css({ "display": "block", "height": "100px", "width": "100px" })
+            $('#tomatoS').css("display", "none");
           }
 
           if (topping == "pep") {
             pepGen(6);
             for (i = 1; i <= 5; i++) {
-              var smLefRanNum = 323 + Math.floor(Math.random() * 57.2);
-              var smTopRanNum = 123 + Math.floor(Math.random() * 57.2);
-              $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": smLefRanNum, "top": smTopRanNum, "display": "block" });
+              lefRanNum = 323 + Math.floor(Math.random() * 57.2);
+              topRanNum = 123 + Math.floor(Math.random() * 57.2);
+              $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": lefRanNum, "top": topRanNum, "display": "block" });
             }
           }
         }
@@ -82,17 +86,19 @@
 
           if (sauces == "tomato") {
             $("#tomatoS").css({ "display": "block", "height": "160px", "width": "160px" });
+            $('#whiteS').css("display", "none");
           }
           else {
-            $('#whiteS').css({ "display": "block", "height": "160px", "width": "160px" })
+            $('#whiteS').css({ "display": "block", "height": "160px", "width": "160px" });
+            $('#tomatoS').css("display", "none");
           }
           
           if (topping == "pep") {
             pepGen(12);
             for (i = 1; i <= 12; i++) {
-              var smLefRanNum = 324 + Math.floor(Math.random() * 117.2);
-              var smTopRanNum = 124 + Math.floor(Math.random() * 117.2);
-              $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": smLefRanNum, "top": smTopRanNum, "display": "block" });
+              lefRanNum = 324 + Math.floor(Math.random() * 117.2);
+              topRanNum = 124 + Math.floor(Math.random() * 117.2);
+              $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": lefRanNum, "top": topRanNum, "display": "block" });
             }
           }
         }
@@ -102,17 +108,19 @@
 
           if (sauces == "tomato") {
             $("#tomatoS").css({ "display": "block", "height": "220px", "width": "220px" });
+            $('#whiteS').css("display", "none");
           }
           else {
-            $('#whiteS').css({ "display": "block", "height": "220px", "width": "220px" })
+            $('#whiteS').css({ "display": "block", "height": "220px", "width": "220px" });
+            $('#tomatoS').css("display", "none");
           }
           
           if (topping == "pep") {
             pepGen(18);
             for (i = 1; i <= 18; i++) {
-              var smLefRanNum = 330 + Math.floor(Math.random() * 153);
-              var smTopRanNum = 130 + Math.floor(Math.random() * 153);
-              $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": smLefRanNum, "top": smTopRanNum, "display": "block" });
+              lefRanNum = 330 + Math.floor(Math.random() * 153);
+              topRanNum = 130 + Math.floor(Math.random() * 153);
+              $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": lefRanNum, "top": topRanNum, "display": "block" });
             }
           }
         }
