@@ -20,8 +20,8 @@
       border-radius: 50%;
       display: none;
       position: absolute;
-      left: 307px;
-      top: 107px;
+      left: 305px;
+      top: 105px;
     }
 
     #whiteS {
@@ -29,8 +29,8 @@
       border-radius: 50%;
       display: none;
       position: absolute;
-      left: 307px;
-      top: 107px;
+      left: 305px;
+      top: 105px;
     }
 
     #cheese {
@@ -38,8 +38,8 @@
       border-radius: 50%;
       display: none;
       position: absolute;
-      left: 311px;
-      top: 111px;
+      left: 309px;
+      top: 109px;
     }
   </style>
   <script>
@@ -52,20 +52,19 @@
         function pepGen(amount) {
           for (i = 1; i <= amount; i++) {
             var pepE = $("<span id=" + "pep" + i + "></span>");
-            console.log(pepE)
             $('body').append(pepE);
           }
         }
 
         if (sizes == "small") {
           $("#dough").css({ "display": "block", "height": "110px", "width": "110px" });
-          $('#cheese').css({ "display": "block", "height": "87px", "width": "87px" });
+          $('#cheese').css({ "display": "block", "height": "92px", "width": "92px" });
 
           if (sauces == "tomato") {
-            $("#tomatoS").css({ "display": "block", "height": "95px", "width": "95px" });
+            $("#tomatoS").css({ "display": "block", "height": "100px", "width": "100px" });
           }
           else {
-            $('#whiteS').css({ "display": "block", "height": "95px", "width": "95px" })
+            $('#whiteS').css({ "display": "block", "height": "100px", "width": "100px" })
           }
 
           if (topping == "pep") {
@@ -79,13 +78,13 @@
         }
         else if (sizes == 'medium') {
           $("#dough").css({ "display": "block", "height": "170px", "width": "170px" });
-          $('#cheese').css({ "display": "block", "height": "147px", "width": "147px" });
+          $('#cheese').css({ "display": "block", "height": "152px", "width": "152px" });
 
           if (sauces == "tomato") {
-            $("#tomatoS").css({ "display": "block", "height": "155px", "width": "155px" });
+            $("#tomatoS").css({ "display": "block", "height": "160px", "width": "160px" });
           }
           else {
-            $('#whiteS').css({ "display": "block", "height": "155px", "width": "155px" })
+            $('#whiteS').css({ "display": "block", "height": "160px", "width": "160px" })
           }
           
           if (topping == "pep") {
@@ -99,20 +98,20 @@
         }
         else {
           $("#dough").css({ "display": "block", "height": "230px", "width": "230px" });
-          $('#cheese').css({ "display": "block", "height": "207px", "width": "207px" });
+          $('#cheese').css({ "display": "block", "height": "212px", "width": "212px" });
 
           if (sauces == "tomato") {
-            $("#tomatoS").css({ "display": "block", "height": "215px", "width": "215px" });
+            $("#tomatoS").css({ "display": "block", "height": "220px", "width": "220px" });
           }
           else {
-            $('#whiteS').css({ "display": "block", "height": "215px", "width": "215px" })
+            $('#whiteS').css({ "display": "block", "height": "220px", "width": "220px" })
           }
           
           if (topping == "pep") {
             pepGen(18);
             for (i = 1; i <= 18; i++) {
-              var smLefRanNum = 325 + Math.floor(Math.random() * 165);
-              var smTopRanNum = 125 + Math.floor(Math.random() * 165);
+              var smLefRanNum = 330 + Math.floor(Math.random() * 153);
+              var smTopRanNum = 130 + Math.floor(Math.random() * 153);
               $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": smLefRanNum, "top": smTopRanNum, "display": "block" });
             }
           }
