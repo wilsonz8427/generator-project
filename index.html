@@ -7,7 +7,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <style>
     #dough {
-      background-color: #bbb;
+      background-color: #ffbd38;
       border-radius: 50%;
       display: none;
       position: absolute;
@@ -44,13 +44,19 @@
   </style>
   <script>
     $(function() {
+      //this whole jquery is activated only when the CREATE button is pressed
       $('button').click(function() {
+        //these are all the variables needed
         var sizes = $(".sSizes").val();
         var sauces = $(".sSauces").val();
         var topping = $(".sTopping").val();
         var lefRanNum;
         var topRanNum;
-
+        /*this is to reset the pizza so that it does not create an afterimage
+        of previous pizzas creation*/
+        $('span').css('display','none');
+        //this is to create pepporoni in the html with the css
+        //which can allow me to call this function in the main part
         function pepGen(amount) {
           for (i = 1; i <= amount; i++) {
             var pepE = $("<span id=" + "pep" + i + "></span>");
@@ -58,10 +64,13 @@
           }
         }
 
+        //this is the main part.
+        //the steps below are repeated with the different sizes
+        //the sauces and the topping follows the size
         if (sizes == "small") {
           $("#dough").css({ "display": "block", "height": "110px", "width": "110px" });
           $('#cheese').css({ "display": "block", "height": "92px", "width": "92px" });
-
+          //this is nested in the small size to generate different sauces
           if (sauces == "tomato") {
             $("#tomatoS").css({ "display": "block", "height": "100px", "width": "100px" });
             $('#whiteS').css("display", "none");
@@ -70,10 +79,10 @@
             $('#whiteS').css({ "display": "block", "height": "100px", "width": "100px" })
             $('#tomatoS').css("display", "none");
           }
-
+          //to create the 6 pepporoni on the small pizza in random position
           if (topping == "pep") {
             pepGen(6);
-            for (i = 1; i <= 5; i++) {
+            for (i = 1; i <= 6; i++) {
               lefRanNum = 323 + Math.floor(Math.random() * 57.2);
               topRanNum = 123 + Math.floor(Math.random() * 57.2);
               $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": lefRanNum, "top": topRanNum, "display": "block" });
@@ -96,8 +105,8 @@
           if (topping == "pep") {
             pepGen(12);
             for (i = 1; i <= 12; i++) {
-              lefRanNum = 324 + Math.floor(Math.random() * 117.2);
-              topRanNum = 124 + Math.floor(Math.random() * 117.2);
+              lefRanNum = 325 + Math.floor(Math.random() * 108);
+              topRanNum = 125 + Math.floor(Math.random() * 108);
               $('#pep'+i).css({ "background-color": "#d10000", "width": "20px", "height": "20px", "border-radius": "50%", "position": "absolute", "left": lefRanNum, "top": topRanNum, "display": "block" });
             }
           }
