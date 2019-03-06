@@ -41,6 +41,14 @@
       left: 309px;
       top: 109px;
     }
+    
+    #name {
+      width:500px;
+      font-size:20px;
+      position:absolute;
+      left: 30px;
+      top: 250px;
+    }
   </style>
   <script>
     $(function() {
@@ -52,6 +60,9 @@
         var topping = $(".sTopping").val();
         var lefRanNum;
         var topRanNum;
+        var vname="Here is your "+ sizes + " pizza with "+ sauces + " sauce and "+ topping +" topping.";
+        console.log(vname);
+        $('#name').html(vname);
         /*this is to reset the pizza so that it does not create an afterimage
         of previous pizzas creation*/
         $('span').css('display', 'none');
@@ -67,6 +78,7 @@
         //the steps below are repeated with the different sizes
         //the sauces and the topping follows the size
         if (sizes == "small") {
+          
           $("#dough").css({ "display": "block", "height": "110px", "width": "110px" });
           $('#cheese').css({ "display": "block", "height": "92px", "width": "92px" });
           //this is nested in the small size to generate different sauces
@@ -175,6 +187,8 @@
   <span id="cheese"></span>
 
   <span id="pep0"></span>
+  
+  <p id="name"></p>
 </body>
 
 </html>
