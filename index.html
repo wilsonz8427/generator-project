@@ -43,11 +43,11 @@
     }
     
     #name {
-      width:500px;
+      width:340px;
       font-size:20px;
       position:absolute;
-      left: 30px;
-      top: 250px;
+      left: 180px;
+      top: 65px;
     }
   </style>
   <script>
@@ -62,7 +62,7 @@
         var topRanNum;
         var vname="Here is your "+ sizes + " pizza with "+ sauces + " sauce and "+ topping +" topping.";
         console.log(vname);
-        $('#name').html(vname);
+        $('#name').html(vname).css({'left': '20px', 'top':'200px', 'width': '200px'});
         /*this is to reset the pizza so that it does not create an afterimage
         of previous pizzas creation*/
         $('span').css('display', 'none');
@@ -91,7 +91,7 @@
             $('#tomatoS').css("display", "none");
           }
           //to create the 6 pepporoni on the small pizza in random position
-          if (topping == "pep") {
+          if (topping == "pepporoni") {
             pepGen(6);
             for (i = 1; i <= 6; i++) {
               lefRanNum = 323 + Math.floor(Math.random() * 57.2);
@@ -113,7 +113,7 @@
             $('#tomatoS').css("display", "none");
           }
 
-          if (topping == "pep") {
+          if (topping == "pepporoni") {
             pepGen(12);
             for (i = 1; i <= 12; i++) {
               lefRanNum = 325 + Math.floor(Math.random() * 108);
@@ -135,7 +135,7 @@
             $('#tomatoS').css("display", "none");
           }
 
-          if (topping == "pep") {
+          if (topping == "pepporoni") {
             pepGen(18);
             for (i = 1; i <= 18; i++) {
               lefRanNum = 330 + Math.floor(Math.random() * 153);
@@ -173,7 +173,7 @@
     Topping:
     <select class="sTopping">
       <option value="none">None</option>
-      <option value="pep">Pepporoni</option>
+      <option value="pepporoni">Pepporoni</option>
     </select>
   </div>
 
@@ -188,7 +188,8 @@
 
   <span id="pep0"></span>
   
-  <p id="name"></p>
+  <p id="name">Hello! Create your pizza on the left. Please click CREATE 
+  when you are done. If you want to you also may change it.</p>
 </body>
 
 </html>
